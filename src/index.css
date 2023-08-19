@@ -13,10 +13,11 @@
   box-sizing: inherit;
 }
 
-body.dark {
-  background: #1b1b1b;
-}
-
 body {
   background: #d9d9d9;
+  user-select: none;
+}
+
+body.dark {
+  background: #1b1b1b;
 }
