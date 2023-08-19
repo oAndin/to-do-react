@@ -1,0 +1,8 @@
+.new-todo {
+  background-color: #00000008;
+  box-sizing: inset 0 -2px 1px #00000008;
+  font-size: 1.5rem;
+  font-style: italic;
+  width: 100%;
+  padding: 16px 16px 18px 16px;
+}

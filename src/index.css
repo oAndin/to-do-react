@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,10 @@
   list-style: none;
   box-sizing: border-box;
   font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
 }
+
+
 
 *,
 *:before,
@@ -13,6 +18,7 @@
   box-sizing: inherit;
 }
 
+<<<<<<< HEAD
 body {
   background: #d9d9d9;
   user-select: none;
@@ -20,4 +26,48 @@ body {
 
 body.dark {
   background: #1b1b1b;
+=======
+
+
+body.dark {
+  background: #1b1b1b;
+}
+
+
+
+body {
+  background: #d9d9d9;
+}
+
+input,
+select,
+textarea {
+  border: 0;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+.title {
+  color: #212121;
+  font-size: 96px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.main {
+  background-color: #fff;
+  box-shadow: 0 1px 2px #000;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 1rem;
+>>>>>>> workbranch
 }
