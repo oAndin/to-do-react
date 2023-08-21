@@ -11,9 +11,7 @@ const DarkMode = () => {
   //   if (localStorage) localStorage['dark-mode'] ? body?.classList.add("dark") : null;
   // }
 
-  if (darkMode) {
-    body.
-  };
+  // if (darkMode) {body.};
 
   const [darkMode, setDarkMode] = useState(true);
 
