@@ -18,15 +18,6 @@
   box-sizing: inherit;
 }
 
-<<<<<<< HEAD
-body {
-  background: #d9d9d9;
-  user-select: none;
-}
-
-body.dark {
-  background: #1b1b1b;
-=======
 
 
 body.dark {
@@ -69,5 +60,4 @@ textarea {
   margin: 0 auto;
   max-width: 480px;
   padding: 1rem;
->>>>>>> workbranch
 }
