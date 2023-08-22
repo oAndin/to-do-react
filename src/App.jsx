@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MdDelete } from 'react-icons/md'
 
 import './App.css';
+import DarkMode from './Components/DarkMode';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
     <section id="app" className="container">
       <header>
         <h1 className="title">To Do</h1>
+        <DarkMode />
       </header>
       <section className="main">
         <input
