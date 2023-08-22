@@ -4,7 +4,7 @@ const DarkMode = () => {
   // get the body element to switch to dark mode color
   let body = document.querySelector('body');
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleMode = () => {
     setDarkMode
