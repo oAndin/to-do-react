@@ -2,22 +2,22 @@ import { useState } from "react";
 
 import { styled } from "styled-components";
 
-let color;
-
 
 const DarkMode = () => {
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   // get the body element to switch to dark mode color
   let body = document.querySelector('body');
+  let text = document.querySelector('title');
+  let color;
 
   if (darkMode === true) {
     body.style.backgroundColor = "#1b1b1b";
-    color = "#d9d9d9"
+    text.style.color = `${color}`
   }
   else {
     body.style.backgroundColor = "#d9d9d9"
-    color = "#1b1b1b"
+    text.style.color = `${color}`
   }
 
   const ModeBtn = styled.button`

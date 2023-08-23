@@ -2,20 +2,15 @@ import { useState } from 'react';
 import { MdDelete } from 'react-icons/md'
 
 import './App.css';
-import DarkMode from './Components/DarkMode';
 
 const App = () => {
 
   const ESC_KEY = 27;
   const ENTER_KEY = 13;
 
-  const initialTodos = [
-    { id: 1, title: "Estudar React", checked: false },
-    { id: 2, title: "Estudar Inglês", checked: true },
-    { id: 3, title: "Tocar guitarra", checked: false },
-  ];
+  const initialTodos = [];
 
-  const [todos,] = useState(initialTodos);
+  const [todos, setTodos] = useState(initialTodos);
   const [value, setValue] = useState('');
 
   const erase = () => {
@@ -23,8 +18,13 @@ const App = () => {
   }
 
   const submit = () => {
-    event.preventDefault;
-    console.log("submit", value);
+    setTodos([...todos,
+    {
+      id: new Date().getTime(),
+      title: value,
+      checked: false,
+    }
+    ]);
     erase();
   }
 
@@ -42,11 +42,17 @@ const App = () => {
     }
   }
 
+  const onChecked = (todo) => {
+    setTodos(todos.map((obj) =>
+      obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
+    )
+    );
+  };
+
   return (
     <section id="app" className="container">
       <header>
         <h1 className="title">To Do</h1>
-        <DarkMode />
       </header>
       <section className="main">
         <input
@@ -59,7 +65,11 @@ const App = () => {
         <ul className='todo-list'>
           {todos.map((todo) => (
             <li key={todo.id.toString} >
-              <span className='todo'>
+              <span
+                className={["todo", todo.checked ? "checked" : ""].join(" ")}
+                onClick={() => { onChecked(todo) }}
+                tabIndex={0}
+              >
                 {todo.title}
               </span>
               <button className='remove' type='button'>
