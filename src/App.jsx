@@ -25,12 +25,7 @@ const App = () => {
       checked: false,
     }
     ]);
-    event.preventDefault;
-    console.log("submit", value);
-    setTodos([{ id: 5, title: "Aprender Java", checked: false }]);
-
     erase();
-
   }
 
   const onChange = (event) => {
@@ -53,6 +48,10 @@ const App = () => {
     )
     );
   };
+
+  const onRemove = (todo) => {
+    setTodos(todos.filter((obj) => obj.id !== todo.id));
+  }
 
   return (
     <section id="app" className="container">
@@ -77,7 +76,11 @@ const App = () => {
               >
                 {todo.title}
               </span>
-              <button className='remove' type='button'>
+              <button
+                className='remove'
+                type='button'
+                onClick={() => { onRemove(todo) }}
+              >
                 <MdDelete size={32} />
               </button>
             </li>
