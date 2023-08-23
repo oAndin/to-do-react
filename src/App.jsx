@@ -8,11 +8,7 @@ const App = () => {
   const ESC_KEY = 27;
   const ENTER_KEY = 13;
 
-  const initialTodos = [
-    { id: 1, title: "Estudar React", checked: false },
-    { id: 2, title: "Estudar Inglês", checked: true },
-    { id: 3, title: "Tocar guitarra", checked: false },
-  ];
+  const initialTodos = [];
 
   const [todos, setTodos] = useState(initialTodos);
   const [value, setValue] = useState('');
@@ -22,6 +18,13 @@ const App = () => {
   }
 
   const submit = () => {
+    setTodos([...todos,
+    {
+      id: new Date().getTime(),
+      title: value,
+      checked: false,
+    }
+    ]);
     event.preventDefault;
     console.log("submit", value);
     setTodos([{ id: 5, title: "Aprender Java", checked: false }]);
@@ -44,6 +47,13 @@ const App = () => {
     }
   }
 
+  const onChecked = (todo) => {
+    setTodos(todos.map((obj) =>
+      obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
+    )
+    );
+  };
+
   return (
     <section id="app" className="container">
       <header>
@@ -60,7 +70,11 @@ const App = () => {
         <ul className='todo-list'>
           {todos.map((todo) => (
             <li key={todo.id.toString} >
-              <span className='todo'>
+              <span
+                className={["todo", todo.checked ? "checked" : ""].join(" ")}
+                onClick={() => { onChecked(todo) }}
+                tabIndex={0}
+              >
                 {todo.title}
               </span>
               <button className='remove' type='button'>
