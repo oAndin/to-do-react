@@ -14,7 +14,7 @@ const App = () => {
     { id: 3, title: "Tocar guitarra", checked: false },
   ];
 
-  const [todos,] = useState(initialTodos);
+  const [todos, setTodos] = useState(initialTodos);
   const [value, setValue] = useState('');
 
   const erase = () => {
@@ -24,7 +24,10 @@ const App = () => {
   const submit = () => {
     event.preventDefault;
     console.log("submit", value);
+    setTodos([{ id: 5, title: "Aprender Java", checked: false }]);
+
     erase();
+
   }
 
   const onChange = (event) => {
